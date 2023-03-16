@@ -10,18 +10,59 @@
       type="x-icon"
       href="images/Etch-a-sketch.jpg.png"
     />
-    <link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <div class="button-container">
-      <button class="button-63" role="button">New Grid</button>
-    </div>
-    <div id="container"></div>
-    <div class="button-hub">
 
+  <body>
+    <div class="header-text">Etch-A-Sketch</div>
+    <div class="items">
+      <div class="button-hub">
+        
+        <button class="button-57" role="button">
+          <span class="text"><i class="fa-sharp fa-solid fa-palette"></i></span
+          ><span><input type="color" id="colorpicker" value="#0000ff" /></span>
+        </button>
+        <button class="button-57" id="resetButton" role="button">
+          <span class="text">
+            <i class="fa-sharp fa-solid fa-rotate-right"></i></span
+          ><span>Reset Grid</span>
+        </button>
+        <button class="button-57" role="button">
+          <span class="text"><i class="fa-solid fa-eye"></i></span
+          ><span>Toggle Outlines</span>
+        </button>
+        <button class="button-57" role="button">
+          <span class="text"><i class="fa-solid fa-eraser"></i></span
+          ><span>Eraser</span>
+        </button>
+        <button class="button-57" role="button">
+          <span class="text"><i class="fa-solid fa-rainbow"></i></span
+          ><span>Rainbow Mode</span>
+        </button>
+        <div class="range-slider">
+          <input type="range" min="2" max="60"
+          value="30" class="slider">
+          <div class="slider-thumb">
+            <div class="tooltip"></div>
+          </div>
+          <div class="progress"></div>
+        </div>
+      </div>
+      <div class="grid-border">
+        <div id="container"></div>
+      </div>
     </div>
-    <div class="footer">Made by <a href="https://github.com/SantosN21" class="githublogo"><i class="fa-brands fa-github"></i></a> Santos Novoa</div>
+    <div class="footer">
+      Made by
+      <a href="https://github.com/SantosN21" class="githublogo"
+        ><i class="fa-brands fa-github"></i
+      ></a>
+      Santos Novoa
+    </div>
   </body>
   <script src="script.js" defer></script>
 </html>

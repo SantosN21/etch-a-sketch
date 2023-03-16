@@ -20,24 +20,42 @@ const createGrid = (x) => {
       grid.addEventListener("mouseover", () => {
         grid.style.backgroundColor = "black";
       });
+    
     }
   }
 };
-
+const resetGrid = () => {
+  const resetButton = document.querySelector("resetButton");
+  const grids = document.querySelector("grid");
+  resetButton.addEventListener("click", () => {
+    grids.style.backgroundColor = "white";
+  })
+}
 //Function that allows you to create a new grid
 const newGrid = () => {
-  const button = document.querySelector("button");
-  button.addEventListener("click", () => {
-    let z = prompt(
-      "Please enter the size of the grid \nNOTE: Grid is capped to 60x60"
-    );
-    z = parseInt(z);
-    if (z > 60) {
-      z = 60;
-    }
+  const container = document.querySelectorAll(".range-slider");
+  let slider;
+  let z;
+for (let i = 0; i < container.length; i++) {
+  slider = container[i].querySelector(".slider");
+  const thumb = container[i].querySelector(".slider-thumb");
+  const tooltip = container[i].querySelector(".tooltip");
+  const progress = container[i].querySelector(".progress");
+  const customSlider = () => {
+    const maxVal = slider.getAttribute("max");
+    const val = (slider.value / maxVal) * 100 + "%";
+    tooltip.innerHTML = slider.value + "x" + slider.value;
+    progress.style.width = val;
+    thumb.style.left = val;
+    z = parseInt(slider.value)
     clearGrid();
     createGrid(z);
-  });
+  }
+  customSlider();
+  slider.addEventListener("input", () => {
+    customSlider();
+  })
+}
 };
 //Function to clear the grid
 const clearGrid = () => {
@@ -50,5 +68,6 @@ const createInitialGrid = () => {
   newGrid();
 };
 createInitialGrid();
+
 
 //Make a button to toggle grid outlines
