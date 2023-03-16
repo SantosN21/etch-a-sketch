@@ -1,4 +1,5 @@
 //Creates all grids.
+
 const createGrid = (x) => {
   let gridContainer = document.getElementById("container");
   let grid = document.createElement("div");
@@ -18,7 +19,7 @@ const createGrid = (x) => {
       gridContainer.appendChild(grid);
       //Colors grid items whenever clicked
       grid.addEventListener("mouseover", () => {
-        grid.style.backgroundColor = "black";
+        grid.style.backgroundColor = "black"; 
       });
     
     }
@@ -36,7 +37,8 @@ const newGrid = () => {
   const container = document.querySelectorAll(".range-slider");
   let slider;
   let z;
-for (let i = 0; i < container.length; i++) {
+  //Slider
+  for (let i = 0; i < container.length; i++) {
   slider = container[i].querySelector(".slider");
   const thumb = container[i].querySelector(".slider-thumb");
   const tooltip = container[i].querySelector(".tooltip");
@@ -71,3 +73,10 @@ createInitialGrid();
 
 
 //Make a button to toggle grid outlines
+const gridOutline = () => {
+  const outlineButton = document.getElementById("outlineButton");
+  outlineButton.addEventListener("click", () => {
+    let grid = document.querySelectorAll("#grid")
+    grid.forEach(grid => grid.style.outline="1px solid #000000");
+  });
+}

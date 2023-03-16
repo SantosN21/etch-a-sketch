@@ -14,68 +14,40 @@ body {
   font-weight: bold;
   text-align: center;
   padding: 20px;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 #container {
-	top: 30px;
-	font-size: 0;
-	margin:auto;
-	height:660px;
-	width:660px;
-	padding: 0;
-	border: none;
+  top: 30px;
+  font-size: 0;
+  margin: auto;
+  height: 660px;
+  width: 660px;
+  padding: 0;
+  border: none;
 }
 #grid {
-  margin:0;
-	padding:0;
-	border:none;
-  /* Outline makes the grid outline */
-	/* outline:1px solid rgb(223, 218, 218); */
-	display:inline-block;
+  margin: 0;
+  padding: 0;
+  border: none;
+  /* makes the grid outline */
+  outline: none;
+  display: inline-block;
   height: 60px;
   width: 60px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
- #grid:hover { 
+#grid:hover {
   /* background-color: black; */
   cursor: pointer;
- } 
-.button-container {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding: 10px;
 }
-.button-63 {
-    align-items: center;
-    background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
-    border: 0;
-    border-radius: 8px;
-    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
-    box-sizing: border-box;
-    color: #FFFFFF;
-    display: flex;
-    /* font-family: Phantomsans, sans-serif; */
-    font-size: 20px;
-    justify-content: center;
-    line-height: 1em;
-    max-width: 100%;
-    min-width: 140px;
-    padding: 19px 24px;
-    text-decoration: none;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    white-space: nowrap;
-    cursor: pointer;
-  }
-  
-  .button-63:active,
-  .button-63:hover {
-    outline: 0;
-  }
-  .footer {
-  background-color: rgb(192,192,192);
+.button-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+}
+.footer {
+  background-color: rgb(192, 192, 192);
   width: 100%;
   position: fixed;
   bottom: 0;
@@ -85,31 +57,31 @@ body {
   color: #000000;
   font-size: 15px;
   font-weight: bold;
-  }
-  .githublogo {
-    text-decoration: none;
-  }
-  a {
-    color: rgb(0, 0, 0);
-  }
-  .grid-border {
-    border: 30px solid rgb(192,192,192);
-    /* border-radius: 8px; */
-	  height:660px;
-	  width:660px;
-    align-self: center;
-    display: flex;
-  }
-  .items {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+}
+.githublogo {
+  text-decoration: none;
+}
+a {
+  color: rgb(0, 0, 0);
+}
+.grid-border {
+  border: 30px solid rgb(192, 192, 192);
+  /* border-radius: 8px; */
+  height: 660px;
+  width: 660px;
+  align-self: center;
+  display: flex;
+}
+.items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .button-hub {
   display: flex;
   flex-direction: column;
   gap: 40px;
-  background: rgb(192,192,192);
+  background: rgb(192, 192, 192);
   padding: 20px;
   height: 680px;
 }
@@ -134,7 +106,9 @@ button {
   touch-action: manipulation;
   border-radius: 8px;
 }
-
+.span-font {
+  font-size: 15px;
+}
 
 .button-57 span:first-child {
   position: relative;
@@ -165,7 +139,7 @@ button {
   width: 100%;
   height: 100%;
   /* background-color: black; */
-  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
   transform-origin: bottom center;
   transition: transform 600ms cubic-bezier(0.48, 0, 0.12, 1);
   transform: skewY(9.3deg) scaleY(0);
@@ -191,7 +165,7 @@ button {
   position: relative;
   display: flex;
 }
-.range-slider .slider{
+.range-slider .slider {
   -webkit-appearance: none;
   width: 100%;
   height: 0.4em;
@@ -219,7 +193,7 @@ button {
   cursor: pointer;
 }
 .range-slider .slider-thumb::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -231,7 +205,7 @@ button {
   transition: 0.3s;
 }
 .range-slider:hover .slider-thumb::before {
-  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
 }
 .range-slider .tooltip {
   position: absolute;
@@ -262,7 +236,7 @@ button {
   width: 50%;
   height: 0.4em;
   border-radius: 3px;
-  background: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  background: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -270,12 +244,9 @@ button {
   pointer-events: none;
 }
 
-
-
-  
-  /* @media (min-width: 768px) { */
-    /* .button-63 { */
-      /* font-size: 24px; */
-      /* min-width: 196px; */
-    /* } */
-  /* } */
+/* @media (min-width: 768px) { */
+/* .button-63 { */
+/* font-size: 24px; */
+/* min-width: 196px; */
+/* } */
+/* } */
