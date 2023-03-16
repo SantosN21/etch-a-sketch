@@ -1,5 +1,7 @@
-//Creates all grids.
+let randomColors = false;
 
+
+//Creates all grids.
 const createGrid = (x) => {
   let gridContainer = document.getElementById("container");
   let grid = document.createElement("div");
@@ -18,13 +20,29 @@ const createGrid = (x) => {
       grid.style.height = `${newHeight}px`;
       gridContainer.appendChild(grid);
       //Colors grid items whenever clicked
+      let color = "black";
       grid.addEventListener("mouseover", () => {
-        grid.style.backgroundColor = "black"; 
+        if (randomColors) {
+          grid.style.backgroundColor = getRandomColor();
+        } else {
+          grid.style.backgroundColor = "black"; 
+        };
       });
-    
     }
   }
 };
+
+//Function to generate random colors
+const getRandomColor = () => {
+  let letters = "0123456789ABCDEF";
+  let color = "#";
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+//Resets the grid
 const resetGrid = () => {
   const resetButton = document.querySelector("resetButton");
   const grids = document.querySelector("grid");
@@ -68,6 +86,11 @@ const resetGridOnSizeChange = () => {
 const createInitialGrid = () => {
   createGrid(16);
   newGrid();
+
+  const randomColorButton = document.getElementById("randomColorButton");
+  randomColorButton.addEventListener("click", () => {
+    randomColors = !randomColors;
+  });
 };
 createInitialGrid();
 
@@ -88,3 +111,4 @@ const clearGrid = () => {
     grid.forEach(grid => grid.style.backgroundColor = "#ffffff");
   });
 }
+

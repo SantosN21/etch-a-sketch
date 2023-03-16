@@ -158,6 +158,9 @@ button {
 }
 #colorpicker {
   cursor: pointer;
+  border: none;
+  height: 30px;
+  width: 40px;
 }
 .range-slider {
   max-width: 30em;
@@ -242,6 +245,20 @@ button {
   transform: translateY(-50%);
   left: 0;
   pointer-events: none;
+}
+.fa-rainbow {
+  color: transparent;
+  background: linear-gradient(
+    to top,
+    violet,
+    indigo,
+    blue,
+    green,
+    yellow,
+    orange,
+    red
+  );
+  -webkit-background-clip: text;
 }
 
 /* @media (min-width: 768px) { */
