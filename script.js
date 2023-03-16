@@ -50,7 +50,7 @@ const newGrid = () => {
     progress.style.width = val;
     thumb.style.left = val;
     z = parseInt(slider.value)
-    clearGrid();
+    resetGridOnSizeChange();
     createGrid(z);
   }
   customSlider();
@@ -59,8 +59,8 @@ const newGrid = () => {
   })
 }
 };
-//Function to clear the grid
-const clearGrid = () => {
+//Function to reset the grid when a new size is selected
+const resetGridOnSizeChange = () => {
   document.getElementById("container").textContent = "";
 };
 
@@ -71,12 +71,20 @@ const createInitialGrid = () => {
 };
 createInitialGrid();
 
-
-//Make a button to toggle grid outlines
+//Button function to toggle grid outlines
 const gridOutline = () => {
   const outlineButton = document.getElementById("outlineButton");
   outlineButton.addEventListener("click", () => {
     let grid = document.querySelectorAll("#grid")
     grid.forEach(grid => grid.style.outline="1px solid #000000");
+  });
+}
+
+//Button function that clears the current grid 
+const clearGrid = () => {
+  const clearGridButton = document.getElementById("clearGridButton");
+  clearGridButton.addEventListener("click", () => {
+    let grid = document.querySelectorAll("#grid")
+    grid.forEach(grid => grid.style.backgroundColor = "#ffffff");
   });
 }
