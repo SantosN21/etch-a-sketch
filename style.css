@@ -36,10 +36,7 @@ body {
   width: 60px;
   background-color: #ffffff;
 }
-#grid:hover {
-  /* background-color: black; */
-  cursor: pointer;
-}
+
 .button-container {
   display: flex;
   align-items: center;
@@ -84,6 +81,7 @@ a {
   background: rgb(192, 192, 192);
   padding: 20px;
   height: 680px;
+  border-right-width: 30px;
 }
 button {
   cursor: pointer;
@@ -94,7 +92,7 @@ button {
   border: none;
   color: #18181a;
   display: inline-block;
-  font-size: 35px;
+  font-size: 29px;
   line-height: 15px;
   padding: 18px 18px 17px;
   margin: 7px;
@@ -260,6 +258,10 @@ button {
   );
   -webkit-background-clip: text;
 }
+/* .mode {
+  background: white;
+  width: fit-content
+} */
 
 /* @media (min-width: 768px) { */
 /* .button-63 { */

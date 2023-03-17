@@ -1,5 +1,12 @@
 let randomColors = false;
-
+//Allows the user to click hold and draw on the grid
+let isDrawing = false;
+window.addEventListener("mousedown", () => {
+    isDrawing = true;
+});
+window.addEventListener("mouseup", () => {
+    isDrawing = false;
+});
 
 //Creates all grids.
 const createGrid = (x) => {
@@ -21,11 +28,13 @@ const createGrid = (x) => {
       gridContainer.appendChild(grid);
       //Colors grid items whenever clicked
       grid.addEventListener("mouseover", () => {
+        if (isDrawing) {
         if (randomColors) {
           grid.style.backgroundColor = getRandomColor();
         } else {
           grid.style.backgroundColor = "black"; 
         };
+      }
       });
     }
   }
@@ -106,4 +115,5 @@ const clearGrid = () => {
     grid.forEach(grid => grid.style.backgroundColor = "#ffffff");
   });
 }
+
 
