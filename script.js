@@ -20,7 +20,6 @@ const createGrid = (x) => {
       grid.style.height = `${newHeight}px`;
       gridContainer.appendChild(grid);
       //Colors grid items whenever clicked
-      let color = "black";
       grid.addEventListener("mouseover", () => {
         if (randomColors) {
           grid.style.backgroundColor = getRandomColor();
@@ -34,11 +33,7 @@ const createGrid = (x) => {
 
 //Function to generate random colors
 const getRandomColor = () => {
-  let letters = "0123456789ABCDEF";
-  let color = "#";
-  for (let i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
+  color = `hsl(${Math.random() * 360}, 100%, 50%)`
   return color;
 }
 
