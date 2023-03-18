@@ -1,4 +1,6 @@
 let randomColors = false;
+let eraser = false;
+const gridContainer = document.getElementById("container");
 //Allows the user to click hold and draw on the grid
 let isDrawing = false;
 window.addEventListener("mousedown", () => {
@@ -10,14 +12,11 @@ window.addEventListener("mouseup", () => {
 
 //Creates all grids.
 const createGrid = (x) => {
-  let gridContainer = document.getElementById("container");
   let grid = document.createElement("div");
   grid.id = "grid";
   // Set the new width and height as style properties of the grid
   let newWidth = 660 / x;
   let newHeight = 660 / x;
-  grid.style.width = `${newWidth}px`;
-  grid.style.width = `${newHeight}px`;
   for (let rows = 0; rows < x; rows++) {
     for (let columns = 0; columns < x; columns++) {
       let grid = document.createElement("div");
@@ -31,8 +30,12 @@ const createGrid = (x) => {
         if (isDrawing) {
         if (randomColors) {
           grid.style.backgroundColor = getRandomColor();
-        } else {
-          grid.style.backgroundColor = "black"; 
+        } 
+        else if (eraser) {
+          grid.style.backgroundColor = getEraser();
+        }
+        else {
+          grid.style.backgroundColor = "black"; //Default color 
         };
       }
       });
@@ -45,6 +48,12 @@ const getRandomColor = () => {
   color = `hsl(${Math.random() * 360}, 100%, 50%)`
   return color;
 }
+
+//Eraser
+  const getEraser = () => { 
+    const color = "white"
+    return color;
+  }
 
 //Resets the grid
 const resetGrid = () => {
@@ -90,11 +99,16 @@ const resetGridOnSizeChange = () => {
 const createInitialGrid = () => {
   createGrid(16);
   newGrid();
-
+  //Random color
   const randomColorButton = document.getElementById("randomColorButton");
   randomColorButton.addEventListener("click", () => {
     randomColors = !randomColors;
   });
+  //Eraser
+  const eraserButton = document.getElementById("eraserButton");
+  eraserButton.addEventListener ("click", () => {
+    eraser = !eraser;
+  })
 };
 createInitialGrid();
 
@@ -115,5 +129,4 @@ const clearGrid = () => {
     grid.forEach(grid => grid.style.backgroundColor = "#ffffff");
   });
 }
-
 
