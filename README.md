@@ -1,6 +1,6 @@
 # Etch-A-Sketch
 This is a simple web application that allows users to draw on a grid using their mouse. User can also select multiple drawing options such as erasing and random colors.
-![etch-sketch](images\etchAsketchPreview.jpg)
+![etch-sketch](images/etchAsketchPreview.jpg)
 
 
 ## Usage 
