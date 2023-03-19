@@ -10,6 +10,11 @@ window.addEventListener("mouseup", () => {
     isDrawing = false;
 });
 
+
+/* Remove the not-allowed cursor when trying to draw
+Had issues when I first added this that broke the slider,
+if statement inside the code block fixes that.
+*/
 document.body.onmousedown = (e) => {
   if (e.target.id === "grid") {
   e.preventDefault();
