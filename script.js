@@ -10,16 +10,22 @@ window.addEventListener("mouseup", () => {
     isDrawing = false;
 });
 
+document.body.onmousedown = (e) => {
+  if (e.target.id === "grid") {
+  e.preventDefault();
+  }
+  isDrawing = true; 
+};
+
 //Creates all grids.
 const createGrid = (x) => {
-  let grid = document.createElement("div");
-  grid.id = "grid";
   // Set the new width and height as style properties of the grid
-  let newWidth = 660 / x;
-  let newHeight = 660 / x;
+  const newWidth = 660 / x;
+  const newHeight = 660 / x;
+  
   for (let rows = 0; rows < x; rows++) {
     for (let columns = 0; columns < x; columns++) {
-      let grid = document.createElement("div");
+      const grid = document.createElement("div");
       grid.id = "grid";
       //Set the new width and height as style properties of the grid
       grid.style.width = `${newWidth}px`;
