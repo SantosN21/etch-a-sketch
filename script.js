@@ -32,6 +32,7 @@ const createGrid = (x) => {
     for (let columns = 0; columns < x; columns++) {
       const grid = document.createElement("div");
       grid.id = "grid";
+      grid.classList.add("grid-outline")
       //Set the new width and height as style properties of the grid
       grid.style.width = `${newWidth}px`;
       grid.style.height = `${newHeight}px`;
@@ -128,7 +129,7 @@ const gridOutline = () => {
   const outlineButton = document.getElementById("outlineButton");
   outlineButton.addEventListener("click", () => {
     let grid = document.querySelectorAll("#grid")
-    grid.forEach(grid => grid.style.outline="1px solid #000000");
+    grid.forEach(grid => grid.classList.toggle("grid-outline"));
   });
 }
 

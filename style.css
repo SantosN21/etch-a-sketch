@@ -29,8 +29,6 @@ body {
   margin: 0;
   padding: 0;
   border: none;
-  /* makes the grid outline */
-  outline: none;
   display: inline-block;
   height: 60px;
   width: 60px;
@@ -257,6 +255,9 @@ button {
     red
   );
   -webkit-background-clip: text;
+}
+.grid-outline {
+  outline: 1px solid #ddd;
 }
 /* .mode {
   background: white;
